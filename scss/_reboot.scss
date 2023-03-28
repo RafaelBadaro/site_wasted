@@ -9,20 +9,34 @@ html {
     height: 100vh;
 }
 
+.font-secondary {
+    font-family: $fontstack_secondary;
+}
+
+.font-tertiary {
+    font-family: $fontstack_tertiary;
+}
+
+
 body {
-    color: $white;
+    color: $purple;
     font-family: $fontstack;
 
     .navbar {
+
         .collapse navbar-collapse {
             text-align: center;
         }
 
         // CSS do LOGO
-        .navbar-brand {}
+        .navbar-brand {
+            color: $white;
+        }
 
         // CSS das opções da navbar
-        .nav-link.active {}
+        .nav-link.active {
+            color: $white;
+        }
 
         .nav-link.active:hover {
             box-shadow: inset 0 -1px 0 0 $black;
@@ -30,12 +44,18 @@ body {
         }
     }
 
-    #confiraDicas {
-        a {
-            text-decoration: none;
-            color: $white;
-            border-bottom: 1px solid $white;
-            padding-bottom: 1px;
+    #header {
+        #wasted_header {
+            font-size: 4.5rem;
+        }
+    }
+
+    #quemSomos {
+        color: $white;
+
+        #quemSomos_header {
+            font-size: 4.5rem;
+
         }
     }
 }
