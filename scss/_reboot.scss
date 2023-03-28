@@ -3,11 +3,28 @@ html {
     height: 100%;
     width: 100%;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .vh {
     height: 100vh;
 }
+
+.hide {
+    opacity: 0;
+}
+
+.reveal {
+    transition: all 3s;
+}
+
+
+@include media-breakpoint-up(lg) {
+    .vh-lg {
+        height: 100vh;
+    }
+}
+
 
 .font-secondary {
     font-family: $fontstack_secondary;
@@ -17,6 +34,18 @@ html {
     font-family: $fontstack_tertiary;
 }
 
+.carrousel-height {
+    height: 21.5rem;
+}
+
+.paralelogramo {
+    transform: skewX(-5deg);
+}
+
+.transparente {
+    opacity: 0.6;
+    background-color: black;
+}
 
 body {
     color: $purple;
@@ -53,9 +82,62 @@ body {
     #quemSomos {
         color: $white;
 
+
+
         #quemSomos_header {
             font-size: 4.5rem;
 
         }
     }
+
+    .card {
+        background-color: transparent;
+
+        img {
+            height: 100%;
+            border-radius: 50px;
+        }
+
+        .card-title {
+            color: $white;
+        }
+    }
+
+    .curve {
+        position: absolute;
+        height: 225px;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .curve::before {
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 100% 71%;
+        width: 53%;
+        height: 102%;
+        background-color: $purple;
+        -webkit-transform: translate(85%, 60%);
+        transform: translate(89%, 62%);
+    }
+
+    .curve::after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 55%;
+        height: 100%;
+        background-color: $black;
+        transform: translate(-4%, 40%);
+    }
+
+    .test {
+        background-color: #e5e5f7;
+        //opacity: 0.8;
+        background-image: radial-gradient(circle at center center, #444cf7, #e5e5f7), repeating-radial-gradient(circle at center center, #444cf7, #444cf7, 10px, transparent 20px, transparent 10px);
+        background-blend-mode: multiply;
+    }
+
 }

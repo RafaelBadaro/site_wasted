@@ -13,6 +13,7 @@ var configuration = {
     paths: {
         src: {
             html: '*.html',
+            js: 'src/js/*.js'
         },
         dist: './dist'
     }
@@ -21,19 +22,29 @@ var configuration = {
 // Gulp task to copy HTML files to output directory
 gulp.task('copy-html', () => {
     return gulp.src(configuration.paths.src.html)
+        .pipe(notify({ message: 'Copy HTML files' }))
         .pipe(gulp.dest(configuration.paths.dist));
 });
 
 
 // Copy Bootstrap JS-files
-gulp.task('copy-js', () => {
+gulp.task('copy-js-bootstrap', () => {
     return gulp.src([
         'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
     ])
         .pipe(newer('./dist/js'))
+        .pipe(notify({ message: 'Copy JS-boostrap files' }))
+        .pipe(gulp.dest('./dist/js'));
+});
+
+// Copy JS-files
+gulp.task('copy-js', () => {
+    return gulp.src(configuration.paths.src.js)
         .pipe(notify({ message: 'Copy JS files' }))
         .pipe(gulp.dest('./dist/js'));
 });
+
+
 
 // Compile sass into CSS (/src/css/)
 gulp.task('copy-sass', () =>
@@ -75,5 +86,5 @@ gulp.task('browser-sync', () => {
     gulp.watch('./dist/**/*.{html,css,js}').on('change', browserSync.reload);
 });
 
-gulp.task('build', gulp.series('copy-html', 'copy-js', 'copy-sass'));
-gulp.task('default', gulp.series('copy-html', 'copy-js', 'copy-sass', 'browser-sync'));
+gulp.task('build', gulp.series('copy-html', 'copy-js', 'copy-js-bootstrap', 'copy-sass'));
+gulp.task('default', gulp.series('copy-html', 'copy-js', 'copy-js-bootstrap', 'copy-sass', 'browser-sync'));

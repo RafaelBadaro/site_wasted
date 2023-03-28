@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nome empresa</title>
+  <title>WASTED Co</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -16,7 +16,7 @@
   <script src="https://kit.fontawesome.com/82722ee4df.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-secondary">
+<body class="bg-secondary overflow-x-hidden">
   <nav class="navbar navbar-expand-lg py-4">
     <div class="container-fluid px-5">
       <a class="navbar-brand" href="#header">
@@ -50,25 +50,23 @@
       </div>
     </div>
   </nav>
-  <header id="header" class="bg-secondary">
+  <header id="header" class="bg-secondary position-relative">
     <div class="vh text-center container d-flex justify-content-center flex-column">
       <div>
         <h1 id="wasted_header" class="font-tertiary"> Wasted </h1>
         <h2> Be different </h2>
       </div>
     </div>
+    <div class="curve"></div>
   </header>
   <main>
     <section id="quemSomos" class="vh bg-primary">
-      <div class="container h-100 d-flex justify-content-center flex-column">
-        <div>
-          <h1 id="quemSomos_header" class="font-secondary"> Quem somos</h1>
-        </div>
-
-        <div class="container mt-3">
-          <div class="row text-center">
-            <div class="col-sm mt-4">
-              <p class="fs-5 text-break">
+      <div class="container h-100 d-flex justify-content-center flex-column reveal hide">
+        <div class="container paralelogramo">
+          <div class="transparente">
+            <div class="container">
+              <h1 id="quemSomos_header" class="font-secondary fw-bolder"> Quem somos</h1>
+              <p class="fs-5 text-break fw-bolder">
                 A Wasted Co. Brasil é uma marca de roupas e lifestyle estabelecida em 2017 na cidade de
                 Belo Horizonte, Minas Gerais - Brasil
               </p>
@@ -78,28 +76,66 @@
       </div>
     </section>
 
-    <section id="produtos">
-      <div class="container d-flex justify-content-center flex-column py-4">
-
-        <h1>Produtos</h1>
-
-        <div class="container mt-3">
+    <section id="produtos" class="vh-lg">
+      <div class="d-flex justify-content-center flex-column py-4 h-100">
+        <div class="container">
+          <h1 class="fw-bolder fs-1">Produtos</h1>
+        </div>
+        <div class="container my-3 test">
           <div class="row text-center">
             <div class="col-sm mt-4 d-flex justify-content-center">
-              <div class="card bg-secondary" style="width: 18rem; ">
-                <img src="assets/img/w1.png" class="card-img-top img-fluid" alt="w1">
+              <div class="card" style="width: 18rem; ">
+                <div id="carouselFade1" class="carousel slide carousel-fade carrousel-height">
+                  <div class="carousel-inner h-100">
+                    <div class="carousel-item active h-100">
+                      <img src="assets/img/w1.png" class="card-img-top img-fluid d-block w-100" alt="w1">
+                    </div>
+                    <div class="carousel-item h-100">
+                      <img src="assets/img/w2.png" class="card-img-top img-fluid d-block w-100" alt="w2">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade1"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselFade1"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
                 <div class="card-body">
                   <h5 class="card-title">Cropped</h5>
-                  <a href="#" class="btn btn-primary">Ver mais</a>
+                  <a href="#" class="btn btn-secondary">Ver mais</a>
                 </div>
               </div>
             </div>
             <div class="col-sm mt-4 d-flex justify-content-center">
-              <div class="card bg-secondary" style="width: 18rem;">
-                <img src="assets/img/b1.png" class="card-img-top img-fluid" alt="b1">
+              <div class="card" style="width: 18rem;">
+                <div id="carouselFade2" class="carousel slide carousel-fade carrousel-height">
+                  <div class="carousel-inner h-100">
+                    <div class="carousel-item active h-100">
+                      <img src="assets/img/b1.png" class="card-img-top img-fluid d-block w-100" alt="b1">
+                    </div>
+                    <div class="carousel-item h-100">
+                      <img src="assets/img/b2.png" class="card-img-top img-fluid d-block w-100" alt="b2">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade2"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselFade2"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
                 <div class="card-body">
                   <h5 class="card-title">T-Shirt</h5>
-                  <a href="#" class="btn btn-primary">Ver mais</a>
+                  <a href="#" class="btn btn-secondary">Ver mais</a>
                 </div>
               </div>
             </div>
@@ -109,7 +145,7 @@
     </section>
   </main>
 
-  <script src="js/scripts.js"></script>
+  <script src="src/js/scripts.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
@@ -117,7 +153,7 @@
     document.write("<script async src='http://HOST:7777/browser-sync/browser-sync-client.js?v=2.27.10'><\/script>".replace("HOST", location.hostname));
     //]]></script>
 </body>
-<footer id="contatos" class="bg-primary d-flex justify-content-between align-items-center px-3">
+<footer id="contato" class="bg-primary d-flex justify-content-between align-items-center px-3">
   <div class="container pt-5">
     <div class="row text-center">
       <div class="col-sm">
@@ -125,12 +161,6 @@
           <h3>Telefones</h3>
           <div>
             <ul class="lista_telefones">
-              <li>
-                <div class="d-flex justify-content-center">
-                  <i class="fa-solid fa-phone pt-1"></i>
-                  <h4 class="px-2">(31) XXXX-XXXX</h4>
-                </div>
-              </li>
               <li>
                 <div class="d-flex justify-content-center">
                   <i class="fa-solid fa-phone pt-1"></i>
@@ -145,10 +175,10 @@
         <div class="email">
           <h3>Email</h3>
           <div>
-            <span>Adalberto C. de Rezende</span>
+            <span>Rodrigo Sales</span>
             <div class="d-flex justify-content-center">
               <i class="fa-sharp fa-solid fa-envelope pt-1"></i>
-              <h4 class="px-2">acr@acrnet.com.br</h4>
+              <h4 class="px-2">salleroaraujo@gmail.com</h4>
             </div>
           </div>
         </div>
@@ -161,7 +191,9 @@
           WASTED - CNPJ: 00.000.000.0000/00
         </div>
         <div class="col-sm">
-          EST. 2017. Belo Horizonte BRASIL
+          <p>
+            EST. 2017. Belo Horizonte BRASIL
+          </p>
           Copyright 2023 © All Right Reserved - Design by Rafael Badaró
         </div>
       </div>
